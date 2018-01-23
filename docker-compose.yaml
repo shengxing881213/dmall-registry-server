@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  dmall-registry-server:
+      image: dmall-docker-registry:5000/dmall/registry-server:$BUILD_NUMBER
+      mem_limit: 1024m
+      networks:
+          - jenkins_dmall-network
+      ports:
+          - "8761:8761"
+
+networks:
+  jenkins_dmall-network:
+    external: true
